@@ -16,13 +16,13 @@ ReactOnRails.configure do |config|
   config.server_bundle_js_file = "webpack-bundle.js"
 
   # If you are using the ReactOnRails::TestHelper.configure_rspec_to_compile_assets(config)
-  # with rspec then this controls what yarn command is run
+  # with rspec then this controls what npm command is run
   # to automatically refresh your webpack assets on every test run.
-  config.npm_build_test_command = "yarn run build:test"
+  config.npm_build_test_command = "npm run build:test"
 
   # This configures the script to run to build the production assets by webpack. Set this to nil
   # if you don't want react_on_rails building this file for you.
-  config.npm_build_production_command = "yarn run build:production"
+  config.npm_build_production_command = "npm run build:production"
 
   ################################################################################
   # CLIENT RENDERING OPTIONS
@@ -52,18 +52,12 @@ ReactOnRails.configure do |config|
 
   # Server rendering only (not for render_component helper)
   # You can configure your pool of JS virtual machines and specify where it should load code:
-  # On MRI, use `mini_racer` for the best performance
+  # On MRI, use `therubyracer` for the best performance
   # (see [discussion](https://github.com/reactjs/react-rails/pull/290))
   # On MRI, you'll get a deadlock with `pool_size` > 1
   # If you're using JRuby, you can increase `pool_size` to have real multi-threaded rendering.
   config.server_renderer_pool_size = 1 # increase if you're on JRuby
   config.server_renderer_timeout = 20 # seconds
-
-  ################################################################################
-  # I18N OPTIONS
-  ################################################################################
-  # Replace the following line to the location where you keep translation.js & default.js.
-  config.i18n_dir = Rails.root.join("client", "app", "libs", "i18n")
 
   ################################################################################
   # MISCELLANEOUS OPTIONS
@@ -76,8 +70,8 @@ ReactOnRails.configure do |config|
   config.server_render_method = "ExecJS"
 
   # Client js uses assets not digested by rails.
-  # For any asset matching this regex, non-digested symlink will be created (what webpack's css wants)
+  # For any asset matching this regex, non-digested symlink will be created
   # To disable symlinks set this parameter to nil.
-  config.symlink_non_digested_assets_regex = /\.(png|jpg|jpeg|gif|tiff|woff|ttf|eot|svg|map)/
+  config.symlink_non_digested_assets_regex = /\.(png|jpg|jpeg|gif|tiff|woff|ttf|eot|svg)/
 
 end
