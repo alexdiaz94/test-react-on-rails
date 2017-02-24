@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
+import axios from 'axios';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    hscope: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
   /**
@@ -14,32 +15,55 @@ export default class HelloWorld extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name };
+    this.state = {
+      hscope: this.props.hscope,
+      horoscope: null,
+    };
+    // this.state = { horoscope: this.props.horoscope };
   }
 
-  updateName = (name) => {
-    this.setState({ name });
+  getScope(e) {
+    e.preventDefault();
+    const sunsign = this.state.hscope.toLowerCase();
+    axios({
+      url: `http://theastrologer-api.herokuapp.com/api/horoscope/${sunsign}/today`,
+      responseType: 'json'
+    }).then((response) => {
+        if (!response.data) {
+          return;
+        }
+        this.setState({ horoscope: response.data.horoscope });
+    });
+  }
+
+  updateName = (hscope) => {
+    this.setState({ hscope });
   };
 
   render() {
     return (
       <div>
         <h3>
-          Hello, {this.state.name}!
+          Hello, {this.state.hscope}!
         </h3>
         <hr />
-        <form >
+        <form onSubmit={(e) => this.getScope(e)} >
           <label htmlFor="name">
-            Say hello to:
+            What's your Horoscope sign:
           </label>
           <input
             id="name"
             type="text"
-            value={this.state.name}
+            value={this.state.hscope}
             onChange={(e) => this.updateName(e.target.value)}
           />
+          <input type="submit" value="Submit" />
         </form>
+          <div>
+           Here is Today's details: {this.state.horoscope}
+        </div>
       </div>
     );
   }
 }
+
