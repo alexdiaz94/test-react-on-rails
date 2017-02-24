@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+ html {
+  background-image: url('horoscopesmall.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+ h3, h1{
+  text-shadow: 2px 2px #900;
+  text-align: center;
+  margin: 40px;
+  color: black;
+  font-size: 40pt;
+  font-family: 'Eczar', serif;
+}
+body {
+  margin: 50px;
+  text-align: center;
+  opacity: 0.8;
+  padding-bottom: 5px;
+}
+form {
+  font-size: larger;
+  margin: 55px;
+}
+input {
+  padding: 3px ;
+  color: #FFF;
+  background-color: #900;
+  font-weight: bold;
+}
+label {
+  font-size: larger;
+  color: black;
+  font-family: 'Eczar', serif;
+}
+div {
+  margin: 30px;
+  background-color: #ffffff;
+}
+
+div.details {
+  font-size: x-large;
+  font-family: 'Smythe', cursive;
+  color: black;
+  margin: 50px;
+  padding-bottom: 20px;
+  border: 2px solid black;
+}
+

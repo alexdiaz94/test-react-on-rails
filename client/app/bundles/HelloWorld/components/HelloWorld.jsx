@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import axios from 'axios';
 
+
 export default class HelloWorld extends React.Component {
   static propTypes = {
     hscope: PropTypes.string.isRequired, // this is passed from the Rails view
@@ -45,22 +46,25 @@ export default class HelloWorld extends React.Component {
       <div>
         <h3>
           Hello, {this.state.hscope}!
-        </h3>
-        <hr />
-        <form onSubmit={(e) => this.getScope(e)} >
-          <label htmlFor="name">
-            What's your Horoscope sign:
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={this.state.hscope}
-            onChange={(e) => this.updateName(e.target.value)}
-          />
-          <input type="submit" value="Submit" />
-        </form>
-          <div>
-           Here is Today's details: {this.state.horoscope}
+          </h3>
+
+          <hr />
+            <form onSubmit={(e) => this.getScope(e)} >
+             <label htmlFor="name">
+              What's your Horoscope sign:
+              </label>
+              <input
+                id="name"
+                type="text"
+                value={this.state.hscope}
+                onChange={(e) => this.updateName(e.target.value)}
+                />
+
+              <input type="submit" value="Submit" />
+             </form>
+            <div className="details">
+           Here are Today's details:
+           <p>{this.state.horoscope}</p>
         </div>
       </div>
     );
