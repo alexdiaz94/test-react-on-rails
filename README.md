@@ -108,10 +108,9 @@ h3, h1{
 
 * **Alex Diaz** - *Contributors* 
 * **shakacode tutorial** - *react_on_rails tutorial*
-(shakacode)[https://github.com/shakacode/react_on_rails/blob/master/docs/tutorial.md]
+[https://github.com/shakacode/react_on_rails/blob/master/docs/tutorial.md]
 
 ## Acknowledgments
 
-* Congrats to the TeamBuddy effort
 * GA for all the blood, sweat, and tears.
 * Dedication
