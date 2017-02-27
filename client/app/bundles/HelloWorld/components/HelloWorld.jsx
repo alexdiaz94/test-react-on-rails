@@ -17,6 +17,7 @@ export default class HelloWorld extends React.Component {
   }
 
   getScope(e) {
+    //helps to not refresh page
     e.preventDefault();
     const sunsign = this.state.hscope.toLowerCase();
     axios({
@@ -40,8 +41,7 @@ export default class HelloWorld extends React.Component {
         <h3>
           Hello, {this.state.hscope}!
           </h3>
-
-          <hr />
+           <hr />
             <form onSubmit={(e) => this.getScope(e)} >
              <label htmlFor="name">
               What's your Horoscope sign:
@@ -52,12 +52,11 @@ export default class HelloWorld extends React.Component {
                 value={this.state.hscope}
                 onChange={(e) => this.updateName(e.target.value)}
                 />
-
               <input type="submit" value="Submit" />
              </form>
             <div className="details">
            Here are Today's details:
-           <p>{this.state.horoscope}</p>
+          <p>{this.state.horoscope}</p>
         </div>
       </div>
     );
