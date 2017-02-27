@@ -1,4 +1,4 @@
-# Horoscope API App
+# Horoscope API App with react_on_rails
 ![logo](https://i.imgur.com/UUHYW6o.png "React_on_Rails")
 
 React on Rails integrates Facebook's React front-end framework with Rails. React v0.14.x and greater is supported, with server rendering. Redux and React-Router are supported as well, also with server rendering, using either execJS or a Node.js server.
@@ -39,7 +39,7 @@ A small code snippet of creating the Task component
     e.preventDefault();
     const sunsign = this.state.hscope.toLowerCase();
     axios({
-      url: `http://theastrologer-api.herokuapp.com/api/horoscope/${sunsign}/today`,
+      url: `http://sandipbgt.com/theastrologer/api/horoscope/${sunsign}/today`,
       responseType: 'json'
     }).then((response) => {
         if (!response.data) {
@@ -50,11 +50,11 @@ A small code snippet of creating the Task component
   }
  
 ```
-> GET: http://theastrologer-api.herokuapp.com/api/horoscope/{sunsign}/today
+> GET: http://sandipbgt.com/theastrologer/api/horoscope/{sunsign}/today
 
 > Description: Returns today's horoscope
 
-> Example: http://theastrologer-api.herokuapp.com/api/horoscope/aquarius/today
+> Example: http://sandipbgt.com/theastrologer/api/horoscope/aquarius/today
 
 > Response:
 
@@ -74,7 +74,7 @@ A small code snippet of creating the Task component
 
 ### CSS styling
 
-> Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents. Below shows the media CSS for responsive mobile design. 
+> Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents. Below shows the CSS for text layout. 
 
 ```
 h3, h1{
@@ -101,8 +101,6 @@ h3, h1{
 * [react-on-rails](https://www.npmjs.com/package/react-on-rails) - React on Rails integrates Facebook's React front-end framework with Rails. React v0.14.x and greater is supported, with server rendering. Redux and React-Router are supported as well, also with server rendering, using either execJS or a Node.js server. 
 * [Redux](http://redux.js.org/) - It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
 
-
- 
 
 ## Authors
 
