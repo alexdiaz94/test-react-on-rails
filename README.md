@@ -89,13 +89,11 @@ h3, h1{
 
 ## Horoscope API
 
-* [Heroku](https://devcenter.heroku.com/) - Heroku lets you deploy, run and manage applications written in Ruby, Node.js, Java, Python, Clojure, Scala, Go and PHP.
-
+* [theastrologer-api](https://github.com/sandipbgt/theastrologer-api) - REST API to view and send horoscope as SMS from theastrologer.com using theastrologer lilbrary, Flask framework and Twilio API.
 
 ## Deployment
 
-* [theastrologer-api](https://github.com/sandipbgt/theastrologer-api) - REST API to view and send horoscope as SMS from theastrologer.com using theastrologer lilbrary, Flask framework and Twilio API.
-
+* [Heroku](https://devcenter.heroku.com/) - Heroku lets you deploy, run and manage applications written in Ruby, Node.js, Java, Python, Clojure, Scala, Go and PHP.
 
 ## Built With
 
