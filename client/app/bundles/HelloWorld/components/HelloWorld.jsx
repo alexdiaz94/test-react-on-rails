@@ -7,15 +7,8 @@ export default class HelloWorld extends React.Component {
     hscope: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
-  /**
-   * @param props - Comes from your rails view.
-   * @param _railsContext - Comes from React on Rails
-   */
   constructor(props, _railsContext) {
     super(props);
-
-    // How to set initial state in ES6 class syntax
-    // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
     this.state = {
       hscope: this.props.hscope,
       horoscope: null,
@@ -27,7 +20,7 @@ export default class HelloWorld extends React.Component {
     e.preventDefault();
     const sunsign = this.state.hscope.toLowerCase();
     axios({
-      url: `http://theastrologer-api.herokuapp.com/api/horoscope/${sunsign}/today`,
+      url: `http://sandipbgt.com/theastrologer/api/horoscope/${sunsign}/today`,
       responseType: 'json'
     }).then((response) => {
         if (!response.data) {
